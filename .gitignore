@@ -1,0 +1,15 @@
+.idea/*
+
+*.pyc
+*.sqlite3
+
+tmp/
+static/
+venv/
+
+
+.DS_Store
+
+
+
+
