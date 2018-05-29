@@ -17,10 +17,10 @@ from django.urls import path
 from college import views
 from django.conf.urls import include, url
 
-app_name = 'my_page'
+app_name = 'college'
 
 urlpatterns = [
-    path('', views.my_page),
+    path('', views.teacher, name='teacher'),
 
 ]
 

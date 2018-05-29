@@ -1,0 +1,19 @@
+{# TODO: Поправить внешку формы #}
+
+{% extends 'base.html' %}
+{% block content %}
+    <form action="{% url 'add_teacher' %}" method="post">
+        <div class="form-row">
+            {% csrf_token %}
+            {% for hidden in form.hidden_fields %}
+                {{ hidden }}
+            {% endfor %}
+            {% for field in form.visible_fields %}
+                {{ field.errors }}
+                {{ field.help_text }}
+                {{ field }}
+            {% endfor %}
+        </div>
+        <button class="btn btn-primary mb-4" type="submit">Сохранить</button>
+    </form>
+{% endblock %}

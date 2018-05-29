@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% if teachers %}
+    {% block content %}
+        <div class="col-md-12 blog-main">
+            <h3 class="pb-3 mb-4 font-italic border-bottom">
+                Наши учителя
+            </h3>
+        </div><!-- /.blog-main -->
+
+        <div class="col-md-5">
+            {% for teacher in teachers %}
+                <ul class="list-group">
+                    <li class="list-group-item text-center mb-4">{{ teacher.surname }} {{ teacher.name }} {{ teacher.patronymic }}
+                        <span class="badge badge-primary badge-pill ml-2">{{ teacher.cabinet }} кабинет</span>
+                    </li>
+                </ul>
+            {% endfor %}
+            <a href="{% url 'add_teacher' %}" class="btn btn-secondary mb-4">Добавить учителя</a>
+
+        </div>
+
+    {% endblock %}
+{% endif %}
